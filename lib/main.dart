@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: BlocProvider(
         create: (context) => WeatherCubit(FakeWeatherRepository()),
@@ -70,7 +71,8 @@ Column buildColumnWithData(Weather weather) {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(weather.cityName),
-      Text(weather.temperatureCelsius.toStringAsFixed(1))
+      Text(weather.temperatureCelsius.toStringAsFixed(1)),
+      const CityInputField()
     ],
   );
 }
